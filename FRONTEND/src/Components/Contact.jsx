@@ -25,7 +25,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000",
+        "https://gym-app-mern-backend.onrender.com",
         formData,
         {
           withCredentials: true,
