@@ -200,6 +200,10 @@ header p {
   .workout_session .wrapper h1 {
     font-size: 1.6rem;
   }
+  .workout_session .wrapper img {
+    width: 667px;
+    height: 100px;
+  }
   .workout_session .wrapper p {
     font-size: 20px;
   }
@@ -463,7 +467,7 @@ header p {
   }
 }
 
-.contact {
+/* .contact {
   min-height: 750px;
   background: url(/contact.jpg) rgba(0, 0, 0, 0.75);
   background-blend-mode: darken;
@@ -524,7 +528,7 @@ header p {
     padding: 50px 20px;
     background-position: left;
   }
-}
+} */
 footer {
   padding: 20px;
   background: #111;
@@ -624,3 +628,119 @@ footer {
     gap: 1px;
   }
 }
+
+/* Container for both About Us and Contact Us */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(180deg, #000000, #000000);
+  /* border-radius: 10px; */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* About Us section */
+.about-us {
+  background-color: #000000;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 2.2em;
+  cursor: pointer;
+  color: #6EC207;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.about-us p {
+  font-size: 1.15em;
+  color: #706f6f;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  font-family: sans-serif;
+}
+
+/* Contact Us section with social media icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: inherit;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Facebook specific style */
+.facebook-link {
+  color: #3b5998;
+}
+
+.facebook-link:hover {
+  color: #2d4373;
+  transform: scale(1.1);
+}
+
+/* WhatsApp specific style */
+.whatsapp-link {
+  color: #25D366;
+}
+
+.whatsapp-link:hover {
+  color: #128C7E;
+  transform: scale(1.1);
+}
+
+/* Instagram specific style */
+.instagram-link {
+  color: #C13584;
+}
+
+.instagram-link:hover {
+  color: #E1306C;
+  transform: scale(1.1);
+}
+
+/* General hover effect for social media icons */
+.social-icons a:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s, color 0.3s ease;
+}
+
+/* Shared container styling for the entire page */
+.contact a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    padding: 20px;
+  }
+
+  .about-us h2 {
+    font-size: 1.8em;
+  }
+
+  .about-us p {
+    font-size: 1em;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+  }
+}
+
+
