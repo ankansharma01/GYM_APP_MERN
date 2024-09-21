@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
      <header>
-      <p>A BUILDER HUT</p>
+      <p>FITNESS</p>
      </header>
     </>
   );
