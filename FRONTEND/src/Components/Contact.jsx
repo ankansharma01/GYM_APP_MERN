@@ -1,77 +1,65 @@
-import React, { useState } from "react";
-import { ClipLoader } from 'react-spinners';
-import { toast } from 'react-toastify';
-import axios from 'axios';
+import React from 'react';
+import { FaFacebookF, FaWhatsapp, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: ""
-  });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
-
-  const sendMail = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      const { data } = await axios.post(
-        "https://gym-app-mern-backend.onrender.com",
-        formData,
-        {
-          withCredentials: true,
-          headers: { "Content-Type": "application/json" }
-        }
-      );
-      toast.success(data.message);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch (error) {
-      toast.error(error.response?.data?.message || "An error occurred while sending the message");
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <section className="contact">
-      <form onSubmit={sendMail} method="POST">
-        <h1><u style={{borderBottom:"1px solid gray;" }}>CONTACT US</u></h1>
-        {['name', 'email', 'phone', 'message'].map((field) => (
-          <div key={field}>
-            <label>{field.charAt(0).toUpperCase() + field.slice(1)}</label>
-            <input
-              type={field === 'email' ? 'email' : field === 'phone' ? 'tel' : 'text'}
-              name={field}
-              value={formData[field]}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        ))}
-        <button
-          type="submit"
-          disabled={loading}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "15px",
-          }}
-        >
-          {loading && <ClipLoader size={20} color="white" />}
-          Send Message
-        </button>
-      </form>
-    </section>
+    <>
+    
+    
+   
+       <div className="contact">
+       <div className="about-us">
+      <h2>About Us</h2>
+      <p>
+        At Fitness in Maheshtala, we are committed to helping you achieve your fitness goals. 
+        Our state-of-the-art facilities provide everything you need for a comprehensive workout.
+      </p>
+      <p>
+        With highly trained staff and personalized training programs, we ensure the best experience for all members.
+      </p>
+      <p>
+        Whether you are just starting out or are a seasoned athlete, we have something for everyone. 
+      </p>
+      <p>
+        Join us today and take the first step towards a healthier, stronger you.
+      </p>
+    </div>
+       <h2 style={{color:'#6EC207', fontSize: "2.2em" , cursor:'pointer'}}>Contact Us</h2>
+       <br/>
+       <div style={{display:'flex' , gap:'1em'}}>
+       <a 
+        href="https://facebook.com/yourpage" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-blue-600 hover:text-blue-800 transition-colors duration-300"
+      >
+        <FaFacebookF size={24} />
+      </a>
+      <br/>
+
+      <a 
+        href="https://wa.me/1234567890" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-green-600 hover:text-green-800 transition-colors duration-300"
+      >
+        <FaWhatsapp size={24} />
+      </a>
+      <br/>
+
+      <a 
+        href="https://instagram.com/yourpage" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="text-pink-600 hover:text-pink-800 transition-colors duration-300"
+      >
+        <FaInstagram size={24} />
+      </a>
+       </div>
+      
+    </div>
+    </>
+   
   );
 };
 
