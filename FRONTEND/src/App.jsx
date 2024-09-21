@@ -17,14 +17,14 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-{/*         <CustomCursor /> */}
+        {/* <CustomCursor /> */}
         <NavBar />
         <Hero />
         <WorkoutSessions />
         <Gallery />
         <Pricing />
-        <Contact />
         <BMIcalculator />
+        <Contact />
         <Footer />
         <ToastContainer theme="dark" position="top-center" />
       </div>
