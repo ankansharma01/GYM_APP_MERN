@@ -11,13 +11,13 @@ import Pricing from "./Components/Pricing";
 import BMIcalculator from "./Components/BMIcalculator";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
-import CustomCursor from "./Components/CustomeCursor";
+// import CustomCursor from "./Components/CustomeCursor";
 
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <CustomCursor />
+{/*         <CustomCursor /> */}
         <NavBar />
         <Hero />
         <WorkoutSessions />
